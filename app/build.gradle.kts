@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.hilt)
     id("com.google.devtools.ksp")
 }
 
@@ -62,6 +63,12 @@ dependencies {
 
     //ConstraintLayout
     implementation (libs.androidx.constraintlayout.compose)
+
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+
 
     //Retrofit
     implementation (libs.retrofit)
